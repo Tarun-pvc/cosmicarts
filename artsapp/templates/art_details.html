@@ -1,0 +1,17 @@
+{% extends './base.html' %}
+{% block content %}
+
+{% for post in posts %}
+<h4 style="color: rgb(220, 0, 136); font-weight: bolder;">{{post.title}}</h4>
+    <hr style="height: 20px; border: 0;background-color: darkblue;">
+    <b><i><h6>{{post.artist}}</h6></i></b>
+    <hr>
+    <b>
+    <p>
+        {{post.description}}
+    </p>
+    </b>
+    <img src="{{ post.art_image.url }}" class="img-fluid" alt="...">
+    
+{% endfor %}
+{% endblock %}

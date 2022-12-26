@@ -1,0 +1,10 @@
+1. implement writing and posting art
+2. likes system
+3. take commission 
+4. login/sign up function
+5. verification with otp
+
+- only I can post art
+- others can only subscribe
+- Security features are vital
+

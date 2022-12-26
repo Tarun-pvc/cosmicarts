@@ -1,0 +1,20 @@
+{% extends './base.html' %}
+
+{% block content %}
+
+<form action="create_blog.html" method="post">
+
+    <div>
+        <label for="name">Enter Username</label>
+        <input type="text" name = "name">
+    </div>
+    <div>
+        <label for="name">Enter Password</label>
+        <input type="password" name = "password">
+    </div>
+    <button type = "submit">Sign in</button>
+    <button type = "reset">Reset</button>
+    
+</form>
+
+{% endblock %}
