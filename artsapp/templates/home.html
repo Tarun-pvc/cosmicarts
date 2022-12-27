@@ -14,21 +14,51 @@
      padding: 5px;
      justify-content: space-evenly;
     }
-    .focused-image:hover {
-        border:2px solid magenta;
+    /* .focused-image:hover {
+        border:1px solid purple;
         border-radius: 1px;
         transition: width 2s;
+    } */
+    .pics{
+        margin: 3px;
     }
+
+    #tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+#tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+#tooltip:hover .tooltiptext {
+  visibility: visible;
+}
 
 </style>
 
-<div class="disp-images">
+<div class="disp-images" >
 {% for post in posts %}
-    <div class="focused-image">
-            <a href="{% url 'art_details' post.id %}">
-                <img src=" {{ post.art_image.url }}" alt="Sorry for the inconvenience." width = "300px" height="300px" class="rounded mx-auto d-block" >
-            </a> 
-        </div>
+    <div class="focused-image" id="tooltip">
+        <span class="tooltiptext">{{post.title}}</span>
+        <a href="{% url 'art_details' post.id %}" class = "pics">
+            <img src=" {{ post.art_image.url }}" alt="Sorry for the inconvenience." width = "300px" height="300px" class="rounded mx-auto d-block" >
+        </a> 
+    </div>
 {% endfor %} 
 </div>
 </div>
