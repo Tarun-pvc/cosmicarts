@@ -15,17 +15,18 @@
      justify-content: space-evenly;
     }
     .focused-image:hover {
-        border:0.5px solid lightgrey;
+        border:2px solid magenta;
         border-radius: 1px;
+        transition: width 2s;
     }
 
 </style>
 
-{% for post in posts %}
 <div class="disp-images">
+{% for post in posts %}
     <div class="focused-image">
             <a href="{% url 'art_details' post.id %}">
-                <img src=" {{ post.art_image.url }}" alt="Sorry for the inconvenience." width = "200px" height="200px" class="rounded mx-auto d-block" >
+                <img src=" {{ post.art_image.url }}" alt="Sorry for the inconvenience." width = "300px" height="300px" class="rounded mx-auto d-block" >
             </a> 
         </div>
 {% endfor %} 
