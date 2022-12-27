@@ -3,17 +3,32 @@
 
 
 {% block content %}
-
-<h1>
+<div class="container">
+<!-- <h4>
     Gallery
-</h1>
+</h4> -->
+<style>
+    .disp-images {
+     display: flex;
+     flex-wrap: wrap;
+     padding: 5px;
+     justify-content: space-evenly;
+    }
+    .focused-image:hover {
+        border:0.5px solid lightgrey;
+        border-radius: 1px;
+    }
 
+</style>
 
 {% for post in posts %}
-
+<div class="disp-images">
+    <div class="focused-image">
             <a href="{% url 'art_details' post.id %}">
-                <img src=" {{ post.art_image.url }}" alt="Sorry for the inconvenience." width = "100px" class="rounded mx-auto d-block" >
+                <img src=" {{ post.art_image.url }}" alt="Sorry for the inconvenience." width = "200px" height="200px" class="rounded mx-auto d-block" >
             </a> 
-            <br>
+        </div>
 {% endfor %} 
+</div>
+</div>
 {% endblock %}

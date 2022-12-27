@@ -1,6 +1,7 @@
 {% extends './base.html' %}
 {% block content %}
 
+<div class="container">
 {% for post in posts %}
 <h4 style="color: rgb(220, 0, 136); font-weight: bolder;">{{post.title}}</h4>
     <hr style="height: 20px; border: 0;background-color: darkblue;">
@@ -14,4 +15,5 @@
     <img src="{{ post.art_image.url }}" class="img-fluid" alt="...">
     
 {% endfor %}
+</div>
 {% endblock %}
