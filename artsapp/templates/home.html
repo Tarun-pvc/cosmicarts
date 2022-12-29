@@ -20,7 +20,7 @@
         transition: width 2s;
     } */
     .pics{
-        margin: 3px;
+        margin: 5px;
     }
 
     #tooltip {
@@ -36,7 +36,7 @@
   background-color: black;
   color: #fff;
   text-align: center;
-  padding: 5px 0;
+  padding: 10px 0;
   border-radius: 6px;
  
   /* Position the tooltip text - see examples below! */
@@ -56,9 +56,16 @@
     <div class="focused-image" id="tooltip">
         <span class="tooltiptext">{{post.title}}</span>
         <a href="{% url 'art_details' post.id %}" class = "pics">
-            <img src=" {{ post.art_image.url }}" alt="Sorry for the inconvenience." width = "300px" height="300px" class="rounded mx-auto d-block" >
+            <img src=" {{ post.art_image.url }}" alt="Sorry for the inconvenience." width = "300px" height="300px" class="card-img-top" >
         </a> 
     </div>
+
+    <!-- <div class="card" style="width: 18rem;" id = "tooltip">
+        <img src="{{post.art_image.url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div> -->
 {% endfor %} 
 </div>
 </div>
