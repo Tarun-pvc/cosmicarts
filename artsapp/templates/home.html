@@ -14,11 +14,9 @@
      padding: 5px;
      justify-content: space-evenly;
     }
-    /* .focused-image:hover {
-        border:1px solid purple;
-        border-radius: 1px;
-        transition: width 2s;
-    } */
+    .focused-image{
+        margin: 5px;
+    }
     .pics{
         margin: 5px;
     }
@@ -51,6 +49,15 @@
 
 </style>
 
+{% for message in messages %}
+
+<div class="alert alert-secondary" role="alert">
+  {{message}}
+  <button type="close" data-dismiss="alert" aria-label="close"></button>
+</div>
+
+{% endfor %}
+
 <div class="disp-images" >
 {% for post in posts %}
     <div class="focused-image" id="tooltip">
@@ -59,13 +66,6 @@
             <img src=" {{ post.art_image.url }}" alt="Sorry for the inconvenience." width = "300px" height="300px" class="card-img-top" >
         </a> 
     </div>
-
-    <!-- <div class="card" style="width: 18rem;" id = "tooltip">
-        <img src="{{post.art_image.url}}" class="card-img-top" alt="...">
-        <div class="card-body">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div> -->
 {% endfor %} 
 </div>
 </div>

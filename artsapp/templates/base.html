@@ -43,11 +43,32 @@
                         <a class="nav-link active" aria-current="page" href="{% url 'contact' %}">Contact Me</a>
                     </li>
                     
+                    
                 </ul>
+                {% if user.is_authenticated %}
+                <ul class="nav justify-content-end">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#" style="color: blueviolet;">Welcome, {{ user.username }}.</a>
+                      </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="{% url 'signout' %}">Sign-Out</a>
+                    </li>
+                  </ul>
+                  {% else %}
+                <ul class="nav justify-content-end">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="{% url 'opensignup' %}">Sign-up</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'opensignin' %}">Sign-in</a>
+                    </li>
+                    </li>
+                  </ul>
+                {% endif %}
             </div>
         </div>
     </nav>
-    {% load static %}
+
     <div class="container>
     <div class="flex-container">
         <!-- Content here -->
