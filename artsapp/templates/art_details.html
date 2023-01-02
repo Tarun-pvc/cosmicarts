@@ -5,7 +5,21 @@
 {% for post in posts %}
 <h4 style="color: rgb(220, 0, 136); font-weight: bolder;">{{post.title}}</h4>
     <hr style="height: 20px; border: 0;background-color: darkblue;">
-    <b><i><h6>{{post.artist}}</h6></i></b>
+    by {{post.artist}}
+    <br>
+    
+    {% if post.created_date == post.updated_date %}
+    <b><i><h6>
+    Posted on: {{post.created_date}}
+    </h6></i></b>
+    {% else %}
+    <b><i><h6>
+    Posted on: {{post.created_date}}
+    <br>
+    Updated on: {{post.updated_date}}
+    </h6></i></b>
+    {% endif %}
+    
     <hr>
     <b>
     <p>
