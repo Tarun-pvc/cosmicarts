@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.views.generic import ListView, DetailView
-from .models import PostModel
+from .models import PostModel, contactModel
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
@@ -20,7 +20,9 @@ def about(request):
 
 
 def contact(request):
-    return render(request, template_name='contact.html')
+    contacts = contactModel.objects.all()
+    context = {'contacts': contacts}
+    return render(request, template_name='contact.html', context=context)
 
 
 def portfolio(request):

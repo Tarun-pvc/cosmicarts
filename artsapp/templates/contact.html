@@ -1,8 +1,55 @@
 {% extends './base.html' %}
 
 {% block content %}
-<div class="container">
-<!-- implement a email submit form -->
-<h1>My twitter: @sterlia3</h1>
+
+<style>
+    
+    #contactform{
+        margin: auto;
+        width: 50%;
+        padding: 10px;
+    }
+</style>
+
+
+{% if user.is_superuser %}
+
+{% for contact in contacts %}
+
+<hr>
+{{contact.subject}}
+
+<br>
+{{contact.author}}
+
+<hr>
+
+{% endfor %}
+
+{% else %}
+
+<div class="container" id = "contactform">
+<form action="" method="post">
+<b>
+Enter subject <input class="form-control" type="text" placeholder="Subject" aria-label="default input example">
+<br>
+<div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+</b>
+</form>
+
+Please be patient after contacting me through this. <br>
+<b style="color: rgb(0, 255, 0);">I will contact you through email</b>, so make sure the email you have registered with is the <b style="color: rgb(0, 145, 39);">correct email.</b>
+
 </div>
+
+<br>
+<br>
+
+
+{% endif %}
+
+
 {% endblock %}
