@@ -3,7 +3,7 @@
 {% block content %}
 
 <style>
-    
+
     #contactform{
         margin: auto;
         width: 50%;
@@ -12,21 +12,7 @@
 </style>
 
 
-{% if user.is_superuser %}
-
-{% for contact in contacts %}
-
-<hr>
-{{contact.subject}}
-
-<br>
-{{contact.author}}
-
-<hr>
-
-{% endfor %}
-
-{% else %}
+{% if user.is_authenticated %}
 
 <div class="container" id = "contactform">
 <form action="" method="post">
@@ -47,6 +33,12 @@ Please be patient after contacting me through this. <br>
 
 <br>
 <br>
+
+{% else %}
+
+<div class="container">
+    please login first.
+</div>
 
 
 {% endif %}

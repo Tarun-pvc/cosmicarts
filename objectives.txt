@@ -1,8 +1,9 @@
-1. implement writing and posting art
-2. likes system
-3. take commission 
-4. login/sign up function
-5. verification with otp
+1. implement writing and posting art - done
+2. likes system - pending
+3. take commission - partially done
+
+4. login/sign up function - done
+5. verification with otp - pending
 
 - only I can post art
 - others can only subscribe

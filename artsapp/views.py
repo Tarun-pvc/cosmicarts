@@ -87,3 +87,7 @@ def signout(request):
     logout(request)
     messages.success(request, 'Logged out!')
     return redirect('homepage')
+
+
+def directMessages(request):
+    return render(request=request, template_name='messages.html')

@@ -1,0 +1,17 @@
+{% extends './base.html' %}
+
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+you are logged in!
+
+{% else %}
+
+please log in 
+
+{% endif %}
+
+
+{% endblock %}
