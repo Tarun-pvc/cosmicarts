@@ -71,6 +71,7 @@ def signin(request):
             messages.success(request, 'Successfully logged in!')
         else:
             messages.error(request, 'Wrong Credentials!')
+            # return redirect('signin')
         return redirect('homepage')  # might need to change to ''
     # return render(request, template_name='home.html')
 

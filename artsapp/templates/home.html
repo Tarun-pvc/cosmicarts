@@ -63,7 +63,7 @@
     <div class="focused-image" id="tooltip">
         <span class="tooltiptext">{{post.title}}</span>
         <a href="{% url 'art_details' post.id %}" class = "pics">
-            <img src=" {{ post.art_image.url }}" alt="Sorry for the inconvenience." width = "300px" height="300px" class="card-img-top" >
+            <img src=" {{ post.art_image.url }}" alt="Sorry for the inconvenience." width = "300px" height="300px" class="card-img-top" title="click for more information">
         </a> 
     </div>
 {% endfor %} 
